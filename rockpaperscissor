@@ -1,0 +1,48 @@
+import random
+
+user_score=0
+computer_score=0
+
+while True:
+ print(" ===== ROCK,PAPER AND SCISSOR GAME ===== ")
+ print("Enter rock,paper or scissor:")
+ print("Enter 1 for rock")
+ print("Enter 2 for paper")
+ print("Enter 3 for scissor")
+
+ userchoice=input("Enter the choice from (rock/paper/scissor):").lower()
+ option=["rock","paper","scissor"]
+ computerchoice=random.choice(option)
+ print("Choice by computer is :",computerchoice)
+
+ if userchoice not in option:
+    print("Enter the valid input")
+    
+ if userchoice==computerchoice:
+    print("It's a Tie ")    
+
+ elif((userchoice=="paper" and computerchoice=="rock")or(userchoice=="rock" and computerchoice=="scissor")
+     or(userchoice=="scissor" and computerchoice=="paper")):
+    print("!!User Win!!")
+    user_score+=1
+ else:
+    print("!!Computer Wins!!")    
+    computer_score+=1
+    
+    
+ print(f"Score of User is:{user_score}")
+ print(f"Score of Computer is:{computer_score}")
+
+ again=input("Want to play again(yes/no):").lower()
+
+ if (again!="yes"):
+    print("Thanks for playing....")
+    break
+
+if user_score>computer_score:
+     print("User Wins") 
+     
+elif computer_score>user_score:
+     print("Computer Wins")   
+else:
+     print("Match Draw")     
